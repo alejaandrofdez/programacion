@@ -18,5 +18,7 @@ public class Sumatorio {
 
         // Mostrar el resultado
         System.out.println("El sumatorio de " + numero + " es: " + sumatorio);
+        sc.close();
     }
+
 }
