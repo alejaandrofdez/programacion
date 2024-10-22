@@ -1,3 +1,4 @@
+package ejercicos_tema1;
 public class Repaso1 {
     public static void main(String[] args) throws Exception {
         /*Vamos a mmezclar array con función */

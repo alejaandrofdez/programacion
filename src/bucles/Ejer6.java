@@ -1,4 +1,4 @@
-
+package bucles;
 
 public class Ejer6{
     public static void main(String[] args) throws Exception {
@@ -9,10 +9,10 @@ public class Ejer6{
             System.out.println(numeros [i]);
          }
             
-        }
+    }
         
 
-    }
 }
+
 
 

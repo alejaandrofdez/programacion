@@ -1,3 +1,4 @@
+package Examenpractico1;
 import java.util.Scanner;
 public class Examenpractico1 {
     public static void main(String[] args) {

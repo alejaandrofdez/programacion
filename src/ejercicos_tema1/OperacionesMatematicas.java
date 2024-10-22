@@ -1,3 +1,4 @@
+package ejercicos_tema1;
 import java.util.Scanner;
 
 public class OperacionesMatematicas {

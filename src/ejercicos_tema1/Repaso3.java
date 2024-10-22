@@ -1,3 +1,4 @@
+package ejercicos_tema1;
 public class Repaso3 {
     public static void main(String[] args) throws Exception{
  

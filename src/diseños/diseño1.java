@@ -1,3 +1,4 @@
+package diseños;
 public class diseño1 {
     public static void main(String[] args) throws Exception {
         for(int i =0;i<5;i++) {
