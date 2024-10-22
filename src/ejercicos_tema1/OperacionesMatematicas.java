@@ -5,7 +5,7 @@ public class OperacionesMatematicas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Pedir 2 números
+        // Pedimos al  usuario dos números
         System.out.print("Introduce el primer número: ");
         double num1 = scanner.nextDouble();
 
@@ -33,5 +33,17 @@ public class OperacionesMatematicas {
         System.out.println("División: " + division);
 
         scanner.close();
+
+        //Cambiar de signo un numero entero
+        //Lo primero que tenemos que hacer es declarar e inicializar la variable
+
+        System.out.println("Introduce un número: ");
+        
+        int numero = scanner.nextInt();
+        int numero = 7;
+        
+
+
     }
+
 }
