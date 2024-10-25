@@ -39,8 +39,6 @@ public class OperacionesMatematicas {
 
         System.out.println("Introduce un número: ");
         
-        int numero = scanner.nextInt();
-        int numero = 7;
         
 
 

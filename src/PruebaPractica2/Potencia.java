@@ -9,7 +9,7 @@ public class Potencia {
         
         // Solicitar la base y el exponente
         System.out.print("Introduce la base (número real): ");
-        double base = scanner.nextDouble();
+        int base = scanner.nextInt();
         
         System.out.print("Introduce el exponente (número entero positivo): ");
         int exponente = scanner.nextInt();
@@ -18,7 +18,7 @@ public class Potencia {
         if (exponente < 0) {
             System.out.println("El exponente debe ser un número entero positivo.");
         } else {
-            double resultado = 1.0;
+            int resultado = 1;
             
             // Calcular la potencia sin el operador de potencia
             for (int i = 0; i < exponente; i++) {
