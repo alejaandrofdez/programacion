@@ -9,7 +9,7 @@ import java.util.Scanner;
             Scanner input = new Scanner(System.in);
             
             // Solicitar la cantidad de números a introducir
-            System.out.println("Ingresa la cantidad de números que deseas introducir:");
+            System.out.println("Ingresa la cantidad de números que deseas introducir: ");
             int cantidadNumeros = input.nextInt();
             
             int mayoresCero = 0;
