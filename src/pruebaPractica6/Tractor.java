@@ -3,13 +3,64 @@ package pruebaPractica6;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class Tractor extends Vehiculos{
+public class Tractor extends Vehiculo{
     
     private double precioDia;
     private LocalDateTime fechaAl;
     private LocalDateTime fechaDev;
 
-    public Tractor(String matricula, boolean alquiler, double precioDia, double fechaAl, double fechaDev) {
+    public Tractor(){
+        this(null);
+        this.precioDia= 50.55;
+        this.fechaAl=null;
+        this.fechaDev= null;
+    }
+   
+    public Tractor(Tractor t){
+        super(t);
+        this.precioDia= 50;
+        this.fechaAl= null;
+        this.fechaDev=null;
+    }
+
+
+    public boolean alquilar(){//para alqilar necesitamos saber los km ini, por tanto un doble
+        
+        if (!super.alquilado) {
+            super.alquilado= true;
+            this.fechaAl=LocalDateTime.now();
+            return true;
+        }
+        return false;
+
+    }
+
+        public boolean devolver(double cantKmDev){//para alqilar necesitamos saber los km ini, por tanto un doble
+        
+            if (!super.alquilado) {
+                super.alquilado= false;
+                this.fechaDev=LocalDateTime.now().plusDays(3);
+                return true;
+            }
+            return false;
+        }
+
+        public double calcularPrecio(){
+            double precioDia = 0;
+
+            int dias = (int)ChronoUnit.DAYS.between(this.fechaDev, this.fechaAl);
+
+            return dias*this.precioDia;
+        } 
+
+    @Override
+    public String toString() {
+        return "Tractor [precioDia=" + this.precioDia + ", fechaAl=" + this.fechaAl + ", fechaDev=" + this.fechaDev + "]";
+
+    }
+
+}
+    /*public Tractor(String matricula, boolean alquiler, double precioDia, double fechaAl, double fechaDev) {
         super(matricula, alquiler);
         this.precioDia = precioDia;
         this.fechaAl = LocalDateTime.now();
@@ -81,5 +132,4 @@ public class Tractor extends Vehiculos{
         this.fechaDev = LocalDateTime.plusDays(3);
 
         System.out.println("Precio Tractor: "+precioDia*ChronoUnit.DAYS.between(fechaAl,fechaDev) );
-    }
-}
+    }*/

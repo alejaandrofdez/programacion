@@ -1,28 +1,41 @@
 package pruebaPractica6;
 
-import java.util.Scanner;
+
 public class App {
     
     public static void main(String[] args) throws Exception{
         
-        System.out.println("Menú de opciones");
-        System.out.println("1 = Alquilar Autobus");
-        System.out.println("2 = Alquilar Tractor");
-        System.out.println("3 = Precio alquiler de Autobus");
-        System.out.println("4 = Precio alquiler Tractor");
         
         
+        Autobus a1 = new Autobus("6547DDD", 0.50);
+        a1.alquilar(100000);
+        System.out.println(a1);
         
-        Autobus a1 = new Autobus();
+        if (!a1.alquilar(100000)) {
+            System.out.println("error");
+        }
+
+        a1.devolver(100300);
+        System.out.println(a1);
+
         
+
+
         Tractor t1 = new Tractor();
-
-        Scanner sc = new Scanner(System.in);
-
-        int caso;
+        System.out.println(t1);
 
         
-        
+
+
+        /*System.out.println( "El alquiler es: "+ calcularPrecio() + );
+
+
+
+    
+        Autobus a2 = new Autobus();
+        System.out.println(a2);*/
+
+
 
     }
 }

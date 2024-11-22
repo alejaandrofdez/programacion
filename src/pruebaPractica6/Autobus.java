@@ -1,55 +1,86 @@
 package pruebaPractica6;
 
-public class Autobus extends Vehiculos{
+public class Autobus extends Vehiculo{
     
-    private double precioKm;
+    private double precioKm; // como es un precio double
     private double cantKmAl;
     private double cantKmDev;
-    
-    public Autobus(String matricula, boolean alquiler, double precioKm, double cantKmAl, double cantKmDev) {
-        super(matricula, alquiler);
-        this.precioKm = precioKm;
-        this.cantKmAl = cantKmAl;
-        this.cantKmDev = cantKmDev;
-    }
+
+
     public Autobus(){
-        super();
-        this.precioKm = 3;
-        this.cantKmAl = 100;
-        this.cantKmDev = 500;
-        
+        this.precioKm = 0.21;
+        this.cantKmAl = 0;
+        this.cantKmDev = 0;
     }
+    
+    public Autobus(String m, double precio){// no metemos los km finales porque no los sabemos
+        super(m);
+        this.precioKm = precio;
+       
+    }
+    public Autobus(Autobus a){// no metemos los km finales porque no los sabemos
+        super(a);
+        this.precioKm = a.precioKm;
+        this.cantKmAl = a.cantKmAl;
+        this.cantKmDev = a.cantKmDev;
+    }
+        
 
     public double getPrecioKm() {
-        return precioKm;
+        return this.precioKm;
     }
 
-    public void setPrecioKm(double precioKm) {
-        this.precioKm = precioKm;
+    public void setPrecioKm(double nuevo) {
+        this.precioKm = nuevo;
     }
 
     public double getCantKmAl() {
-        return cantKmAl;
+        return this.cantKmAl;
     }
 
-    public void setCantKmAl(double cantKmAl) {
-        this.cantKmAl = cantKmAl;
+    public void setCantKmAl(double nuevo) {// set va con void
+        this.cantKmAl = nuevo;
     }
 
-    public double getCantKmDev() {
-        return cantKmDev;
+    public double getCantKmDev(double n) {
+        return this.cantKmDev;
     }
 
-    public void setCantKmDev(double cantKmDev) {
-        this.cantKmDev = cantKmDev;
+    public void setCantKmDev(double n) {
+        this.cantKmDev = n;
+    }
+
+    //utilizamos el boolean porque queremos que nos muestre si esta alquilado
+    public boolean alquilar(double cantKmAl){//para alqilar necesitamos saber los km ini, por tanto un doble
+        
+        if (!super.alquilado) {
+            super.alquilado= true;
+            this.cantKmAl=cantKmAl;
+            return true;
+        }
+        return false;
+    
+    }
+    public boolean devolver(double cantKmDev){//para alqilar necesitamos saber los km ini, por tanto un doble
+        
+        if (!super.alquilado) {
+            super.alquilado= false;
+            this.cantKmDev=cantKmDev;
+            return true;
+        }
+        return false;
+    
+    }
+    public double calcularPrecio(){
+        return (this.cantKmDev);
     }
 
     @Override
     public String toString() {
-        return "Autobus [precioKm=" + precioKm + ", cantKmAl=" + cantKmAl + ", cantKmDev=" + cantKmDev + "]";
+        return "Autobus [precioKm=" + this.precioKm + ", cantKmAl=" + this.cantKmAl + ", cantKmDev=" + this.cantKmDev + "]";
     }
     
-    public void alquilar(){
+    /*public void alquilar(){
 
         if(!alquiler){
             alquiler  = true; 
@@ -81,7 +112,7 @@ public class Autobus extends Vehiculos{
         this.cantKmAl = 100;
         this.cantKmDev = 500;
         System.out.println("Precio Autobus: "+ precioKm*(cantKmDev-cantKmAl));
-    }
+    }*/
 
 
 }
