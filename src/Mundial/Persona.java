@@ -8,6 +8,7 @@ public class Persona {
     protected String fechaNac;
     protected double peso;
     protected double altura;
+    public static int maxPersona= 5;
     
     
     public Persona(int id, String nombre, String apellidos, String fechaNac, double peso, double altura) {
