@@ -2,7 +2,7 @@ package Mundial;
 
 import RepasoFunciones.ArrayList;
 
-public class Seleccion {
+/*public class Seleccion {
     
     private int id;
     private String nombre;
@@ -25,7 +25,7 @@ public class Seleccion {
 
     /*public void anyadir(Persona p ){
         this.integrantes.add(p);
-    }*/
+    }
 
     public void anyadir(Persona p){
 
@@ -86,4 +86,44 @@ public class Seleccion {
         return "Seleccion [id=" + id + ", nombre=" + nombre + "]";
     } 
     
+}*/
+import java.util.ArrayList;
+
+public class SeleccionFutbol {
+    private int id;
+    private String nombre;
+    private ArrayList<Persona> integrantes;
+
+    public SeleccionFutbol(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+        this.integrantes = new ArrayList<>();
+    }
+
+    public boolean anadirPersona(Persona p) {
+        if (!integrantes.contains(p)) {
+            integrantes.add(p);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean borrarPersona(int id) {
+        return integrantes.removeIf(p -> p.getId() == id);
+    }
+
+    public void listarIntegrantes() {
+        for (Persona p : integrantes) {
+            System.out.println(p);
+        }
+    }
+
+    public void listarFutbolistasSobrepeso() {
+        for (Persona p : integrantes) {
+            if (p instanceof Futbolista && p.tieneSobrepeso()) {
+                System.out.println(p);
+            }
+        }
+    }
 }
+
