@@ -12,10 +12,7 @@ public class Futbolista extends Persona implements Deportista {
         this.dorsal = dorsal;
         this.demarcacion = demarcacion;
     }
-    /*public Futbolista(int dorsal, String demarcacion) {
-        this.dorsal = dorsal;
-        this.demarcacion = demarcacion;
-    }*/
+    
 
 
     public int getDorsal() {
@@ -39,13 +36,6 @@ public class Futbolista extends Persona implements Deportista {
 
    
     
-        
-    
-        @Override
-        public void viajar() {
-            System.out.println("El futbolista viaja con su equipo.");
-        }
-    
         @Override
         public void entrenar() {
             System.out.println("El futbolista está entrenando.");
@@ -59,7 +49,7 @@ public class Futbolista extends Persona implements Deportista {
         @Override
         public boolean tieneSobrepeso() {
             double imc = getPeso() / (getAltura() * getAltura());
-            return imc > 22; // Límite para futbolistas
+            return imc >= 22; // Límite para futbolistas
         }
     
         @Override

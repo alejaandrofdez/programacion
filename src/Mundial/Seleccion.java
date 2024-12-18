@@ -2,7 +2,7 @@ package Mundial;
 
 import RepasoFunciones.ArrayList;
 
-/*public class Seleccion {
+public class Seleccion {
     
     private int id;
     private String nombre;
@@ -15,16 +15,54 @@ import RepasoFunciones.ArrayList;
 
     }
 
-    public void listarIntegrantes(){
-         
-        for(int i = 0; i <this.integrantes.size(); i++){
-            System.out.println(this.integrantes.get(i));
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Persona> getIntegrantes() {
+        return integrantes;
+    }
+
+    public void setIntegrantes(ArrayList<Persona> integrantes) {
+        this.integrantes = integrantes;
+    }
+
+    public boolean asignarMundial(Mundial mundial){
+        
+        boolean encontrado = false;
+
+        for(int i = 0; i<this.seleccion.size() && !encontrado; i++){
+            
+            if (this.seleccion.get(seleccion).getId() == s.getId()) {
+                encontrado= true;
+            }
         }
+        if (!encontrado) {
+            this.mundial.add(seleccion);
+        }
+       
 
     }
 
-    /*public void anyadir(Persona p ){
-        this.integrantes.add(p);
+    public boolean quitarMundial(){
+        return false;
+    
+    }
+
+    public void anyadirPersona(Persona persona ){
+        this.integrantes.add(persona);
     }
 
     public void anyadir(Persona p){
@@ -51,7 +89,31 @@ import RepasoFunciones.ArrayList;
                 encontrado= true;
                 this.integrantes.remove(i);
             }
+            
         }
+    }
+
+    public Entrenador getEntrenador(){
+
+
+    }
+        
+
+    public Fisoterapeuta getFisoterapeuta(){
+        
+       
+    }
+
+
+
+    public void listarIntegrantes(){
+         
+        for(int i = 0; i <this.integrantes.size(); i++){
+            System.out.println(this.integrantes.get(i));
+        }
+
+        System.out.println("Integrantes: "+this);
+
     }
 
     public void listarFutbolistasConSobrepeso(){
@@ -79,51 +141,15 @@ import RepasoFunciones.ArrayList;
 
             
         }
+        System.out.println("Jugadores con sobre peso: "+ this);
     }
+    
 
     @Override
     public String toString() {
         return "Seleccion [id=" + id + ", nombre=" + nombre + "]";
     } 
     
-}*/
-import java.util.ArrayList;
-
-public class SeleccionFutbol {
-    private int id;
-    private String nombre;
-    private ArrayList<Persona> integrantes;
-
-    public SeleccionFutbol(int id, String nombre) {
-        this.id = id;
-        this.nombre = nombre;
-        this.integrantes = new ArrayList<>();
-    }
-
-    public boolean anadirPersona(Persona p) {
-        if (!integrantes.contains(p)) {
-            integrantes.add(p);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean borrarPersona(int id) {
-        return integrantes.removeIf(p -> p.getId() == id);
-    }
-
-    public void listarIntegrantes() {
-        for (Persona p : integrantes) {
-            System.out.println(p);
-        }
-    }
-
-    public void listarFutbolistasSobrepeso() {
-        for (Persona p : integrantes) {
-            if (p instanceof Futbolista && p.tieneSobrepeso()) {
-                System.out.println(p);
-            }
-        }
-    }
 }
+
 

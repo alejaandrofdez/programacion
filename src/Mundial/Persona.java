@@ -1,6 +1,6 @@
 package Mundial;
 
-public class Persona {
+public abstract class Persona {
     
     protected int id;
     protected String nombre;
@@ -8,7 +8,7 @@ public class Persona {
     protected String fechaNac;
     protected double peso;
     protected double altura;
-    public static int maxPersona= 5;
+   
     
     
     public Persona(int id, String nombre, String apellidos, String fechaNac, double peso, double altura) {
@@ -79,4 +79,27 @@ public class Persona {
     public void setAltura(double altura) {
         this.altura = altura;
     }
+
+    public boolean asignarSeleccion(Seleccion seleccion){
+            
+        return false;
+
+    }
+
+    public boolean quitarSeleccion(int id){
+        
+        return false;
+
+    }
+
+    public void viajar(){
+        System.out.println();
+    }
+    
+    public boolean tieneSobrepeso() {
+        double imc = getPeso() / (getAltura() * getAltura());
+        return imc > 22;
+        
+    }
 }
+
